@@ -1,0 +1,364 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 5px;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 20px;
+  padding: 10px 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.subtitle {
+  text-align: center;
+  color: #666;
+  margin: 0 0 4px 0;
+  font-size: 0.85em;
+  font-weight: normal;
+}
+
+h1 {
+  text-align: center;
+  color: #667eea;
+  margin: 0 0 12px 0;
+  font-size: 1.5em;
+  line-height: 1.2;
+}
+
+.progress-container {
+  background: #f0f0f0;
+  border-radius: 20px;
+  padding: 10px;
+  margin-bottom: 8px;
+}
+
+.progress-bar {
+  background: #e0e0e0;
+  height: 20px;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  height: 100%;
+  width: 0%;
+  transition: width 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 0.8em;
+}
+
+.progress-text {
+  text-align: center;
+  margin-top: 6px;
+  font-size: 0.9em;
+  color: #333;
+}
+
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(25, auto);
+  grid-auto-flow: column;
+  gap: 0 15px;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  padding: 2px 6px;
+  margin-bottom: 1px;
+  border-radius: 8px;
+  transition: background 0.2s;
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.item:hover {
+  background: #f8f8f8;
+}
+
+.item.completed {
+  background: #e8f5e9;
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.item-number {
+  font-weight: bold;
+  color: #764ba2;
+  margin-right: 5px;
+  min-width: 22px;
+  flex-shrink: 0;
+  font-size: 0.75em;
+}
+
+.item-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 0.75em;
+  padding: 2px;
+  font-family: inherit;
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.item-input:focus {
+    outline: none;
+    background: white;
+    border-radius: 4px;
+}
+
+.item.completed .item-input {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+button {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-weight: bold;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.save-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.clear-btn {
+    background: #f44336;
+    color: white;
+}
+
+/* タブレット対応 */
+@media (max-width: 1024px) {
+    .container {
+        padding: 30px;
+    }
+    
+    h1 {
+        font-size: 2em;
+        margin-bottom: 15px;
+    }
+    
+    .items-grid {
+        gap: 0 20px;
+    }
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+    body {
+        padding: 5px;
+        overflow-x: hidden;
+    }
+    
+    .container {
+        padding: 10px 8px;
+        border-radius: 15px;
+        max-width: 100%;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    h1 {
+        font-size: 1.5em;
+        margin-bottom: 12px;
+    }
+    
+    .subtitle {
+        font-size: 0.9em;
+    }
+    
+    .progress-container {
+        padding: 10px;
+        margin-bottom: 12px;
+    }
+    
+    .progress-bar {
+        height: 22px;
+    }
+    
+    .progress-text {
+        font-size: 0.85em;
+    }
+    
+    .items-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(50, auto);
+        gap: 0 6px;
+        margin-bottom: 12px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .item {
+        padding: 4px 2px;
+        margin-bottom: 2px;
+        min-width: 0;
+    }
+    
+    .checkbox {
+        width: 16px;
+        height: 16px;
+        margin-right: 4px;
+        flex-shrink: 0;
+    }
+    
+    .item-number {
+        min-width: 20px;
+        margin-right: 3px;
+        font-size: 0.75em;
+        flex-shrink: 0;
+    }
+    
+    .item-input {
+        font-size: 0.75em;
+        min-width: 0;
+        width: 100%;
+    }
+    
+    .buttons {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    button {
+        width: 100%;
+        padding: 12px;
+        font-size: 0.9em;
+    }
+}
+
+/* 小さいスマホ対応 */
+@media (max-width: 480px) {
+    body {
+        padding: 3px 0;
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+        margin: 0;
+    }
+    
+    .container {
+        padding: 8px 4px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        margin: 0;
+    }
+    
+    h1 {
+        font-size: 1.3em;
+        margin-bottom: 10px;
+    }
+    
+    .subtitle {
+        font-size: 0.85em;
+    }
+    
+    .items-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(50, auto);
+        gap: 0 4px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .item {
+        padding: 3px 1px;
+    }
+    
+    .checkbox {
+        width: 14px;
+        height: 14px;
+        margin-right: 3px;
+    }
+    
+    .item-number {
+        min-width: 18px;
+        margin-right: 2px;
+        font-size: 0.7em;
+    }
+    
+    .item-input {
+        font-size: 0.7em;
+    }
+}
+
+/* 印刷対応 */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+    
+    .container {
+        box-shadow: none;
+        max-width: 100%;
+    }
+    
+    .buttons {
+        display: none;
+    }
+    
+    .items-grid {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(25, auto);
+        grid-auto-flow: column;
+    }
+}

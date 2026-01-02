@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>やりたいことリスト100</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <p class="subtitle">2026年</p>
+    <h1>やりたいことリスト100</h1>
+
+    <div id="itemsGrid" class="items-grid"></div>
+
+    <div class="progress-container">
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill">0%</div>
+      </div>
+      <div id="progress-text">達成数: <span id="completedPercentage">0</span> / 100</div>
+    </div>
+
+    <div class="buttons">
+      <button class="save-btn" onclick="saveList()">保存</button>
+      <button class="clear-btn" onclick="clearAll()">クリア</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
